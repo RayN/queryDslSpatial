@@ -12,13 +12,13 @@ import com.querydsl.sql.Configuration;
 import com.querydsl.sql.SQLQuery;
 import com.querydsl.sql.SQLQueryFactory;
 import com.querydsl.sql.spatial.PostGISTemplates;
-import com.spatial.funcionario.FuncionarioRepositoryCustom;
+import com.spatial.employee.EmployeeRepositoryCustom;
 
 @SpringBootApplication
-public class SpatialTestsApplication implements CommandLineRunner{
+public class QueryDslSpatialTestApplication implements CommandLineRunner{
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpatialTestsApplication.class, args);
+		SpringApplication.run(QueryDslSpatialTestApplication.class, args);
 	}
 	
 	@SuppressWarnings("rawtypes")
@@ -28,17 +28,17 @@ public class SpatialTestsApplication implements CommandLineRunner{
 	}
 
 	@Autowired
-	private FuncionarioRepositoryCustom funcionarioRepositoryCustom;
+	private EmployeeRepositoryCustom employeeRepositoryCustom;
 	
 	@Override
 	public void run(String... args) throws Exception {
 		
-		System.out.println(this.funcionarioRepositoryCustom.getUnionLocation());
+		System.out.println(this.employeeRepositoryCustom.getAllEmployeeLocations());
 		
-		this.funcionarioRepositoryCustom.getLocalizacaoEmpresaInterseption()
+		this.employeeRepositoryCustom.listCompanyLocationIntersection()
 											.forEach(System.out::println);
 		
-		this.funcionarioRepositoryCustom.readFuncionariosMoramPertoDaEmpresa()
+		this.employeeRepositoryCustom.listEmployeesWhoLiveCloseToTheCompany()
 											.forEach(System.out::println);
 	}
 

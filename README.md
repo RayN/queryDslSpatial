@@ -20,10 +20,12 @@ That's why I shared this project.<br/><br/>
 # Caveats
 I had to override com.querydsl.sql.spatial.SpatialTemplatesSupport from queryDsl. <br/>
 
-Replaced
-ops.put(SpatialOps.UNION, createSpatial(prefix + "Union", 2, asFunction));
-<br/>
+Replaced 
+
+		ops.put(SpatialOps.UNION, createSpatial(prefix + "Union", 2, asFunction));
+
 With
-ops.put(SpatialOps.UNION, createSpatial(prefix + "Union", 1, asFunction));
+
+		ops.put(SpatialOps.UNION, createSpatial(prefix + "Union", 1, asFunction));
 
 

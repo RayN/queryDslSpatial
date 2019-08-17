@@ -18,7 +18,7 @@ That's why I shared this project.<br/><br/>
 
 
 # Caveats
-I had to override com.querydsl.sql.spatial.SpatialTemplatesSupport from queryDsl. Because I need to act like an aggregate function <br/>
+I had to override com.querydsl.sql.spatial.SpatialTemplatesSupport from queryDsl. Because I need it to act like an aggregate function. <br/>
 
 Replaced 
 
